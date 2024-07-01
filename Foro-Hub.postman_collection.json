@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "4caae25b-f958-432a-aa05-c7c13e024eaf",
+		"name": "Foro-Hub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34150633"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "ListadoUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"je\",\r\n    \"clave\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"usuario\": \"jesus\",\r\n    \"clave\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/usuarios"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Foros",
+			"item": [
+				{
+					"name": "Listar Foros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/foros"
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerForo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/foros/1?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"foros",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearForo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Nuevo Foro de Discusión\",\r\n  \"fechaCreacion\": \"2024-07-01T15:30:00\",\r\n  \"estado\": true,\r\n  \"autor\": \"Jesús Esquivel\",\r\n  \"curso\": \"Curso de React\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/foros"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Foro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"titulo\": \"Nuevo Foro de Discusión\",\r\n    \"fechaCreacion\": \"2024-07-01T15:30:00\",\r\n    \"estado\": true,\r\n    \"autor\": \"Jesús Esquivel\",\r\n    \"curso\": \"Curso de React desde 0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/foros"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Foto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/foros/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Respuestas",
+			"item": [
+				{
+					"name": "Obtener Respuesta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/respuestas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "CrearRespuesta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contenido\": \"Respuesta 1\",\r\n    \"idForo\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/respuestas"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Respuesta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"contenido\": \"Respuesta actualizada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/respuestas"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Respuesta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZXN1cyIsImlzcyI6ImZvcm9odWIiLCJpZCI6MSwiZXhwIjoxNzE5ODUxMDY2fQ.mU3rbRNlVbT5jhbQqk9kho073hrPiXXB-dUkGpxI1U4"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/respuestas/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"jesus\",\r\n    \"clave\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/login"
+			},
+			"response": []
+		}
+	]
+}
